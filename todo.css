@@ -1,0 +1,179 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    -45deg,
+    #ff6b6b,
+    #feca57,
+    #48dbfb,
+    #5f27cd
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
+}
+
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+#todoApp {
+  width: 380px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+#todoApp h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+
+.inputBox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#inp1 {
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+#inp1::placeholder {
+  color: #777;
+}
+
+
+.inputBox button {
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.inputBox button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+#new {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+
+.divfortext {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 12px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 0.3s ease;
+}
+
+
+.divfortext span,
+.divfortext input[type="text"] {
+  flex: 1;
+  font-size: 15px;
+  color: #333;
+  border: none;
+  background: transparent;
+}
+
+.divfortext input[type="text"] {
+  background: #ffffff;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+.editbut,
+.dltbtn {
+  padding: 6px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+
+.editbut {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+}
+
+.editbut:hover {
+  opacity: 0.9;
+}
+
+
+.dltbtn {
+  background: linear-gradient(135deg, #ff4e50, #f00000);
+  color: white;
+}
+
+.dltbtn:hover {
+  opacity: 0.9;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 420px) {
+  #todoApp {
+    width: 90%;
+  }
+}
